@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\CSS"
+		},
+		{
+			"path": "..\\BEGINNING USING HTML"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Project 1",
+		"liveServer.settings.port": 5501
+	}
+}

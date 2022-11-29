@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>Payment Gateway</title>
+<script language="javascript">
+
+function check()
+{
+    var subj=document.f1.s1.value;
+    if(subj=="MATHEMATICS")
+    {
+        document.f2.ta.value="1200/-";
+    }
+}
+function IsBlank(s)
+{
+    if(s.charAt(0)=="")
+        return true;
+    else
+        return false;
+}
+function Validate_LastName()
+{
+    var ln=document.f2.i1.value;
+    if(IsBlank(ln))
+    {
+        alert("The last name field cannot be empty or cannot have leading spaces");
+        return false;
+    }
+    return true;
+}
+function Validate_FirstName()
+{
+    var fn=document.f2.i2.value;
+    if(IsBlank(fn))
+    {
+        alert("The first name field cannot be empty or cannot have leading spaces");
+        return false;
+    }
+    return true;
+}
+function Validate_Cardnumber()
+{
+    var cdn=document.f2.cn.value;
+    var leng;
+    cdnleng=cdn.length;
+    if(IsBlank(cdn))
+        {
+            alert("The Card Number field cannot be empty");
+            return false;
+        }
+    if(cdnleng!=16)
+    {
+        alert("The Card Number field cannot contain less than 16 digits");
+        return false;
+    }
+    return true;
+}
+function Validate_CVV()
+{
+    var cv=document.f2.cvv.value;
+    cvleng=cdn.length;
+    if(IsBlank(cv))
+        {
+            alert("The CVV field cannot be empty or cannot have leading spaces");
+            return false;
+        }
+        if(cvleng!=3)
+    {
+        alert("The CVV field cannot contain less than 3 digits");
+        return false;
+    }
+    return true;
+}
+function Validate_Email()
+{
+    var ema=document.f2.email.value;
+    if(IsBlank(ema))
+    {
+        alert("The email field cannot be empty or cannot have leading spaces");
+        return false;
+    }
+        if(IsValid())
+        {
+            return true;
+        }
+        return false;
+}
+function IsValid()
+{
+    var em=document.f2.email.value;
+    len=em.length;
+    for(i=1;i<len;i++)
+    {
+        if(em.charAt(i)=="@"&&em)
+        {
+            return true;
+        }
+    }
+    alert("You have typed an invalid email address");
+    return false;
+}
+function processForm()
+{  
+    if(!Validate_FirstName(document.f2.i2.value))
+        return false;
+    if(!Validate_LastName(document.f2.i1.value))
+        return false;
+    if(!Validate_Email(document.f2.email.value))
+        return false;
+    if(!Validate_Cardnumber(document.f2.cn.value))
+        return false;
+    if(!Validate_CVV(document.f2.cvv.value))
+        return false;
+    window.location.href="mat_math.html";
+    return true;
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+    background-color: rgb(115, 135, 155);
+}
+#tab {
+
+  padding: 20px 20px;
+}
+select {
+        width:200px;
+        height:30px;
+        margin: 10px;
+        background-color: rgb(212, 203, 203);
+        border-radius: 5px;
+    }
+caption{
+    font-size: 25px;
+    font-weight: bold;
+}
+    .btn {
+  background-color: #cfcffa;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  border-radius: 8px;
+  font-weight:bold;
+}
+
+.btn:hover {
+  background-color: #ff0101;
+  color: white;
+}
+input[type=text]
+{
+  width: 200px;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(0, 99, 248);
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgb(193, 196, 204);
+  color:rgb(1, 1, 2);
+  font-weight: bold;
+}
+input[type=date]
+{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(0, 66, 248);
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: rgb(230, 214, 214);
+  color:rgb(255, 9, 9);
+  font-weight: bold;
+  font-size: medium;
+}
+div {
+  border-radius: 5px;
+  background-color: rgb(115, 135, 155);
+  padding: 20px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div style='float: left;'>
+<table name="t2"id="tab" cellpadding="30">
+<form name="f1">
+
+<caption>CHOOSE A TUTORIAL</caption></tr>
+<tr><td><select name="s1">
+<option>MATHEMATICS</option>
+<option>SCIENCE</option>
+<option>BIOLOGY</option>
+<option>COMPUTER SCIENCE</option>
+<option>ENGLISH</option>
+<option>HISTORY</option>
+<option>GEOGRAPHY</option>
+<option>ECONOMICS</option>
+<option>DESIGN</option>
+<option>MARKETING</option>
+<option>PHOTOGRAPHY</option>
+<option>MUSIC</option>
+</select>
+</td>
+</tr>
+<tr><td><input type="button" class="btn" value="Make Payment" onclick="check()"></input></td>
+</tr>
+</form>
+</table>
+</div>
+<div>
+<table name="t3"id="tab" border="0px" cellpadding="20" align="center">
+<form name="f2">
+<caption>PAYMENT FORM</caption>
+<tr><td>FIRST NAME:<input type="text" maxlength="20" name="i2"></input>
+LAST NAME:<input type="text" maxlength="20" name="i1"></input></td></tr>
+<tr><td>EMAIL ID<font color="red"><sup>*</sup></font>:<input type="text" name="email" onchange="Validate_Email()"></input></td></tr>
+<tr><td>PAYMENT MODE:   <select>
+<option>CREDIT CARD
+<option>DEBIT CARD
+</select></td></tr>
+<tr><td>CARD NUMBER<font color="red"><sup>*</sup></font>:  <input type="text" maxlength="16" name="cn"></input>
+CVV<font color="red"><sup>*</sup></font>:  <input type="text" maxlength="3" name="cvv"></input></td></tr>
+<tr><td>EXPIRY DATE:  <input type="DATE"></input></td></tr>
+<tr><td ALIGN="CENTER">TOTAL AMOUNT:  <input type="text" name="ta"></input></td></tr>
+<tr><td ALIGN="CENTER"><input type="button"class="btn" value="PAY" onclick="processForm()" onclick="call()"></input></td></tr>
+</form>
+</table>
+</div>
+<a href="mat_maths.html"><button class="btn">PROCEED TO TUTORIAL</button></a>
+</body>
+</html>

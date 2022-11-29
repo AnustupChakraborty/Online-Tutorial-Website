@@ -1,0 +1,119 @@
+
+body{
+  background-color:rgb(223, 199, 235);
+  color:rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight:bold;
+}
+
+#btn {
+    background-color: rgb(183, 122, 211);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 30px;
+    font-weight:bold;
+    margin: 4px 2px;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+#btn:hover {
+    background-color: #0017e773;
+    color: rgba(211, 0, 0, 0.842);
+  }
+  #btn2 {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    color: rgb(231, 220, 220);
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 30px;
+    font-weight:bold;
+    margin: 4px 2px;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  #btn2:hover {
+    background-color: #e64141ec;
+    color: rgba(0, 0, 0, 0.842);
+  }
+  #tab1{
+    background: url(fail.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    text-align: center;
+    border: 0px;
+  }
+  #tab2{
+    background: url(pass.jpg);
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    background-position: center;
+    text-align: center;
+    border: 0px;
+  }
+  
+  
+h1 {
+        
+    text-shadow: 2px 2px rgb(114, 104, 104);
+    text-align: center;
+  }
+  input[type='radio']:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid rgb(0, 0, 0);
+}
+input[type='radio']:checked:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #ff0000;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid rgb(255, 255, 255);
+}
+h2 {
+        
+  text-align: center;
+}
+.cel{
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:rgb(255, 255, 255)
+  }
+#tab1{
+  background: url(fail.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  text-align: center;
+  border: 0px;
+}
+#tab2{
+  background: url(pass.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  text-align: center;
+  border: 0px;
+}
+
